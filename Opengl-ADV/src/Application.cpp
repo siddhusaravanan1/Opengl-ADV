@@ -78,8 +78,6 @@ std::string cubeFragmentShader =
 "out vec4 FragColor;\n"
 
 "in vec2 texCoords;\n"
-
-<<<<<<< HEAD
 "uniform sampler2D texture1;\n"
 
 "void main()\n"
@@ -114,11 +112,7 @@ int main(void)
     glStencilFunc(GL_NOTEQUAL, 1, 0xFF);
     glStencilOp(GL_KEEP, GL_KEEP, GL_REPLACE);
     unsigned int cubeProgram = CreateShader(cubeVertexShader, cubeFragmentShader);
-<<<<<<< HEAD
     unsigned int cube1Program = CreateShader(cubeVertexShader, cubeFragmentShader);
-=======
-    unsigned int cube1Program = CreateShader(cubeVertexShader, cube1FragmentShader);
->>>>>>> 7f9c7fec15a9d06e88dc83a85ef9897f5ac61a1e
     float vertices[] = {
         //positions           //texCoords
         -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
@@ -211,11 +205,8 @@ int main(void)
         glBindTexture(GL_TEXTURE_2D, texture);
         glm::mat4 model = glm::mat4(1.0f);
         model = glm::translate(model, glm::vec3(-0.5f, 0.0f, 0.0f));
-<<<<<<< HEAD
+
         model = glm::rotate(model, 0.5f * (float)glfwGetTime() * glm::radians(45.0f), glm::vec3(0.0f, 1.0f, 0.0f));
-=======
-        model = glm::rotate(model, 0.5f * (float)glfwGetTime() * glm::radians(45.0f), glm::vec3(0.0f, 0.0f, 1.0f));
->>>>>>> 7f9c7fec15a9d06e88dc83a85ef9897f5ac61a1e
         model = glm::scale(model, glm::vec3(0.5f));
         glm::mat4 view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
         glm::mat4 projection = glm::perspective(glm::radians(45.0f), 640.0f / 480.0f, 0.1f, 100.0f);
@@ -224,12 +215,6 @@ int main(void)
         glUniformMatrix4fv(glGetUniformLocation(cubeProgram, "view"), 1, GL_FALSE, glm::value_ptr(view));
         glUniformMatrix4fv(glGetUniformLocation(cubeProgram, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
 
-<<<<<<< HEAD
-=======
-        glStencilFunc(GL_ALWAYS, 1, 0xFF);
-        glStencilMask(0xFF);
-
->>>>>>> 7f9c7fec15a9d06e88dc83a85ef9897f5ac61a1e
         glBindVertexArray(VAO);
         glDrawArrays(GL_TRIANGLES, 0, 36);
 
@@ -251,32 +236,13 @@ int main(void)
         glStencilMask(0xFF);
 
         glUseProgram(cube1Program);
-<<<<<<< HEAD
-=======
-        model = glm::mat4(1.0f);
-        model = glm::translate(model, glm::vec3(-0.5f, 0.0f, 0.0f));
-        model = glm::rotate(model, 0.5f * (float)glfwGetTime() * glm::radians(45.0f), glm::vec3(0.0f, 0.0f, 1.0f));
-        model = glm::scale(model, glm::vec3(boxSize));
-        glUniformMatrix4fv(glGetUniformLocation(cube1Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
-        glUniformMatrix4fv(glGetUniformLocation(cube1Program, "view"), 1, GL_FALSE, glm::value_ptr(view));
-        glUniformMatrix4fv(glGetUniformLocation(cube1Program, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
 
-
-        glBindVertexArray(VAO);
-        glDrawArrays(GL_TRIANGLES, 0, 36);
-
->>>>>>> 7f9c7fec15a9d06e88dc83a85ef9897f5ac61a1e
         glUniformMatrix4fv(glGetUniformLocation(cube1Program, "view"), 1, GL_FALSE, glm::value_ptr(view));
         glUniformMatrix4fv(glGetUniformLocation(cube1Program, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
         model = glm::mat4(1.0f);
         model = glm::translate(model, glm::vec3(0.5f, 0.0f, 0.0f));
-<<<<<<< HEAD
         model = glm::rotate(model, 0.5f * (float)glfwGetTime() * glm::radians(45.0f), glm::vec3(1.0f, 0.0f, 0.0f));
         model = glm::scale(model, glm::vec3(0.5f));
-=======
-        model = glm::rotate(model, 0.5f * (float)glfwGetTime() * glm::radians(45.0f), glm::vec3(0.0f, 0.0f, -1.0f));
-        model = glm::scale(model, glm::vec3(boxSize));
->>>>>>> 7f9c7fec15a9d06e88dc83a85ef9897f5ac61a1e
         glUniformMatrix4fv(glGetUniformLocation(cube1Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
 
 
