@@ -1,3 +1,9 @@
 ﻿  Application.cpp
+glew32sd.lib(glew.obj) : warning LNK4099: PDB '' was not found with 'glew32sd.lib(glew.obj)' or at ''; linking object as if no debug info
 Application.obj : error LNK2019: unresolved external symbol __imp_glClear referenced in function main
-C:\Users\siddh\Documents\OpenGL\OpenGL-Advanced\Opengl-ADV\x64\Debug\Opengl-ADV.exe : fatal error LNK1120: 1 unresolved externals
+Application.obj : error LNK2019: unresolved external symbol __imp_glDrawArrays referenced in function main
+Application.obj : error LNK2019: unresolved external symbol __imp_glEnable referenced in function main
+glew32sd.lib(glew.obj) : error LNK2019: unresolved external symbol __imp_glGetString referenced in function glewGetExtension
+glew32sd.lib(glew.obj) : error LNK2019: unresolved external symbol __imp_wglGetCurrentDC referenced in function wglewGetExtension
+glew32sd.lib(glew.obj) : error LNK2019: unresolved external symbol __imp_wglGetProcAddress referenced in function _glewInit_GL_VERSION_1_2
+C:\Users\ss\Documents\OpenGL\Adv-Opengl\Opengl-ADV\x64\Debug\Opengl-ADV.exe : fatal error LNK1120: 6 unresolved externals
